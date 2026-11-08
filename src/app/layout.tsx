@@ -18,13 +18,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-       <html lang="bn" translate="no" className="h-full antialiased">
+          <html lang="bn" translate="no" data-scroll-behavior="smooth" className="h-full antialiased">
       <body
         className={`${hindSiliguri.className} min-h-full flex flex-col bg-[#f3f6f2]`}
       >
         <Navbar />
         <Marque />
-        <main>{children}</main>
+                <main className="flex-1">{children}</main>
         <Footer />
         <Toaster position="top-right" />
       </body>
