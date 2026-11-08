@@ -73,7 +73,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Right: Auth Actions */}
+        
           <div className="flex items-center gap-2 sm:gap-3">
             {isPending ? (
               <ProgressCircle aria-label="Loading" value={60}>
@@ -144,10 +144,10 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Middle Divider */}
+    
         <Separator className="w-full bg-slate-100" />
 
-        {/* Bottom Row: Category Navigation */}
+       
         <nav
           aria-label="Category Navigation"
           className="flex items-center gap-2 sm:gap-3 py-2.5 overflow-x-auto"

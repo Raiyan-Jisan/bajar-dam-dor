@@ -68,7 +68,7 @@ export default function SignUpPage() {
 
   return (
     <div className="w-full flex flex-col items-center py-10 px-4">
-      {/* শিরোনাম: কার্ডের বাইরে */}
+      
       <div className="text-center mb-6">
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
           অ্যাকাউন্ট তৈরি করুন
@@ -81,7 +81,7 @@ export default function SignUpPage() {
       <Card className="w-full max-w-[440px] p-5 sm:p-7 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 bg-white">
         <Card.Content className="flex flex-col gap-5">
           <Form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            {/* Name */}
+            
             <TextField
               name="name"
               type="text"
@@ -95,7 +95,7 @@ export default function SignUpPage() {
               <FieldError className="text-xs text-red-500" />
             </TextField>
 
-            {/* Email */}
+           
             <TextField
               name="email"
               type="email"
@@ -109,7 +109,7 @@ export default function SignUpPage() {
               <FieldError className="text-xs text-red-500" />
             </TextField>
 
-            {/* Password */}
+            
             <TextField
               name="password"
               type={isVisible ? "text" : "password"}
@@ -137,7 +137,6 @@ export default function SignUpPage() {
               <FieldError className="text-xs text-red-500" />
             </TextField>
 
-            {/* Confirm Password */}
             <TextField
               name="confirmPassword"
               type={isVisible ? "text" : "password"}
@@ -156,7 +155,7 @@ export default function SignUpPage() {
               )}
             </TextField>
 
-            {/* Submit */}
+            
             <Button
               type="submit"
               variant="primary"
@@ -167,14 +166,14 @@ export default function SignUpPage() {
             </Button>
           </Form>
 
-          {/* অথবা বিভাজক */}
+          
           <div className="w-full flex items-center gap-3">
             <Separator className="flex-1 bg-slate-100" />
             <span className="text-xs text-slate-400 font-medium">অথবা</span>
             <Separator className="flex-1 bg-slate-100" />
           </div>
 
-          {/* Google ও GitHub */}
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <Button
               type="button"
@@ -210,7 +209,7 @@ export default function SignUpPage() {
         </Card.Footer>
       </Card>
 
-      {/* হোম লিংক: কার্ডের বাইরে */}
+      
       <Link
         href="/"
         className="mt-6 flex items-center gap-1.5 text-slate-400 hover:text-slate-600 transition-colors text-xs"

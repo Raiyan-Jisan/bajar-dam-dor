@@ -30,7 +30,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
             </div>
           </div>
 
-          {/* Bottom: Today's Price & Change Badge */}
+        
           <div className="flex items-end justify-between">
             <div className="flex flex-col gap-0.5">
               <span className="text-[11px] text-slate-400 font-medium">

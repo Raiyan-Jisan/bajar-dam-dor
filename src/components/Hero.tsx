@@ -46,7 +46,6 @@ export default function HeroSection() {
             </Link>
           </div>
 
-          {/* Right Column: Hero Image */}
           <Image
             src="/bazar-hero.png"
             alt="সবজির ঝুড়ি"
