@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="bn" className="h-full antialiased">
+       <html lang="bn" translate="no" className="h-full antialiased">
       <body
         className={`${hindSiliguri.className} min-h-full flex flex-col bg-[#f3f6f2]`}
       >
