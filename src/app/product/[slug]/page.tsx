@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react";
 import { IProduct } from "@/types/type";
 import { unitNameBn } from "@/lib/utils";
 
-// গড় দামে দশমিক থাকলে দুই ঘর পর্যন্ত দেখানো হবে (যেমন ৬৩.৫০)
 const formatAvg = (n: number) =>
   n.toLocaleString(
     "bn-BD",
@@ -39,7 +38,7 @@ const ProductDetailsPage = async ({
   const diff = Math.abs(product.today - product.yesterday);
   const unitLabel = unitNameBn[product.unit] ?? product.unit;
 
-  // প্রতিটা বাজারের গড় বের করে গড়ের ক্রমে (কম থেকে বেশি) সাজানো
+  // avg of each market
   const rows = product.markets
     .map((m) => ({ ...m, avg: (m.min + m.max) / 2 }))
     .sort((a, b) => a.avg - b.avg);
@@ -52,7 +51,7 @@ const ProductDetailsPage = async ({
   return (
     <main className="w-full py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-5">
-        {/* ১. ব্রেডক্রাম্ব */}
+        {/* breadcrumb */}
         <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-medium text-slate-500">
           <Link href="/" className="hover:text-[#058a40]">
             হোম
@@ -68,19 +67,30 @@ const ProductDetailsPage = async ({
           <span className="text-slate-900">{product.nameBn}</span>
         </div>
 
-        {/* ২. হেডার কার্ড */}
+        {/* top card */}
         <div className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-5">
           <div className="flex items-center gap-4 sm:gap-5">
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl sm:text-4xl shrink-0">
               {product.image}
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                 {product.nameBn}
               </h1>
-              <p className="text-xs sm:text-sm text-slate-500 font-medium">
-                প্রতি {unitLabel} · {product.categoryNameBn}
-              </p>
+
+              {/* tags */}
+              <div className="flex flex-wrap items-center gap-2">
+                <Link
+                  href={`/category/${product.category}`}
+                  className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-[#058a40] text-xs font-semibold"
+                >
+                  {product.categoryNameBn}
+                </Link>
+                <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">
+                  প্রতি {unitLabel}
+                </span>
+              </div>
+
               <p className="text-xs sm:text-sm text-slate-600">
                 গতকালের তুলনায় আজ দাম{" "}
                 {isUp && (
@@ -102,7 +112,7 @@ const ProductDetailsPage = async ({
             </div>
           </div>
 
-          {/* আজকের দাম বক্স */}
+          {/* today price */}
           <div className="bg-slate-50 border border-slate-100 rounded-2xl px-8 py-4 flex flex-col items-center text-center gap-0.5">
             <span className="text-xs text-slate-500 font-medium">
               আজকের দাম
@@ -134,7 +144,7 @@ const ProductDetailsPage = async ({
           </div>
         </div>
 
-        {/* ৩. দামের সারসংক্ষেপ */}
+        {/* summary */}
         <div className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-7 space-y-5">
           <h2 className="text-lg sm:text-xl font-extrabold text-slate-900">
             দামের সারসংক্ষেপ
@@ -181,7 +191,7 @@ const ProductDetailsPage = async ({
             </div>
           </div>
 
-          {/* ৪. বাজারভিত্তিক আজকের দাম */}
+          {/* market table */}
           <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 pt-2">
             বাজারভিত্তিক আজকের দাম
           </h2>
