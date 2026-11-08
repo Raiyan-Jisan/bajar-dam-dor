@@ -32,6 +32,7 @@ export default function Marque() {
             <Link
               key={item.id}
               href={`/product/${item.slug}`}
+              prefetch={false}
               className="flex items-center gap-2 px-5 border-r border-slate-200 whitespace-nowrap text-xs sm:text-sm"
             >
               <span className="text-base leading-none">{item.image}</span>

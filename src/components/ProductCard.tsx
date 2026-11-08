@@ -11,7 +11,11 @@ export default function ProductCard({ product }: { product: IProduct }) {
   const isDown = product.change.dir === "down";
 
   return (
-    <Link href={`/product/${product.slug}`} className="block h-full group">
+    <Link
+      href={`/product/${product.slug}`}
+      prefetch={false}
+      className="block h-full group"
+    >
       <Card className="h-full p-5 rounded-2xl bg-white border border-slate-200/80 shadow-none hover:shadow-[0_10px_30px_rgba(15,23,42,0.08)] hover:border-emerald-200 transition-all">
         <Card.Content className="p-0 flex flex-col gap-4">
           {/* Top: Emoji, Name & Unit */}
@@ -30,7 +34,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
             </div>
           </div>
 
-        
+          {/* Bottom: Today's Price & Change Badge */}
           <div className="flex items-end justify-between">
             <div className="flex flex-col gap-0.5">
               <span className="text-[11px] text-slate-400 font-medium">
