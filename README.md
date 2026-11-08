@@ -34,25 +34,3 @@
 | Auth | BetterAuth |
 | Database | MongoDB Atlas |
 | অন্যান্য | react-hot-toast, react-fast-marquee, lucide-react |
-
-## লোকালে চালানোর নিয়ম
-
-```bash
-git clone <repository-url>
-cd bajar-dam-dor
-npm install
-npm run dev
-```
-
-মূল ফোল্ডারে `.env` ফাইল বানিয়ে নিচের ভ্যারিয়েবলগুলো দিতে হবে:
-
-```env
-BETTER_AUTH_SECRET=
-BETTER_AUTH_URL=http://localhost:3000
-MONGO_URI=
-NEXT_PUBLIC_API_URL=https://openapi.programming-hero.com/api/bazardor
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
-```
