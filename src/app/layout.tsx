@@ -34,6 +34,8 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Marque from "@/components/Marque";
 import { Toaster } from "react-hot-toast";
 
 const hindSiliguri = Hind_Siliguri({
@@ -52,6 +54,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body
         className={`${hindSiliguri.className} min-h-full flex flex-col bg-[#f3f6f2]`}
       >
+        <Navbar />
+        <Marque />
         <main>{children}</main>
         <Toaster position="top-right" />
       </body>
